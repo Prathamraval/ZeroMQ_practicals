@@ -2,7 +2,6 @@ package socketProgramming;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -12,8 +11,13 @@ public class Client {
 		Socket s = new Socket("",5050);
 		
 		OutputStreamWriter os = new OutputStreamWriter(s.getOutputStream());
-		PrintWriter out = new PrintWriter(os);
 		os.write("this is from client");
+		
+		//other way 
+//		OutputStream outputStream = socket.getOutputStream();
+//		DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+//		dataOutputStream.writeUTF("Hello, Server!");
+
 		os.flush();
 	}
 }

@@ -19,6 +19,13 @@ public class Server {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
 		String str = br.readLine();
+		
+		//other way by byte stream 
+//		InputStream inputStream = s.getInputStream();
+//		DataInputStream dataInputStream = new DataInputStream(inputStream);
+//		String receivedMessage = dataInputStream.readUTF();
+
+
 		System.out.println("Client data recieved: " + str);
 		Thread.currentThread().sleep(10000);
 
